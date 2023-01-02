@@ -20,19 +20,24 @@ The following directories should be in your path (already on datahub)
 The submission format below assumes that your code based on KDTree+XGBoost. 
 If you used a differet learning algorithm, see the instructions in the next section below.
 
-### Submission Directory Structure:
+### Submission Structure:
+
+#### submitted files 
+Th
 
 `XGBoostCreate_submission/`:  the directory that contains all of the files in the submission.
-Make zip file from this directory and submit it to **Gradesscope** as `code.tar.gz` or `code.tgz`
+Make zip file from this directory and submit it to **Gradesscope** as `code.zip` or `code.tar.gz` or `code.tgz`
 
+If you are submitting as `code.zip`, gradescope will automaticall unzip in the file uploader. This is expected and you can just hit upload.
 
 The following files, and no other files, must be in the directory:
-1. `code/`: contains:
+1. `explanation.md`, This is a text file that describes the improvements over Freund-XGBoost.  You need to say what are the changes in the learn.py code and why you think these changes helped improve the performance.
+2. `code/`: contains:
    * `learn.py <poverty_dir>`: A script that performs the learning. it takes as input the file 
     `../public_tables/train.csv` and the images in the path `poverty_dir/anon_images/`. The learned predictor is stored in a pickled dictionary file `data/Checkpoint.pkl`. This file is later read by `predict.py`
    * `predict.py <poverty_dir>`: A script that use `data/Checkpoint.pkl` and generates the files `data/results.csv` and `data/country_results.csv` according to the input files `../public_tables/random_test_reduct.csv` and `../public_data/country_test_reduct.csv`. The generated result files should be the same as the ones you submitted to Gradescope. 
    * Other files that your model needs.
-2. `data/`: contains `Checkpoint.pkl` which contains the learned XGBoost predictor that can reproduce the same result files you submitted to Gradescope.
+3. `data/`: contains `Checkpoint.pkl` which contains the learned XGBoost predictor that can reproduce the same result files you submitted to Gradescope.
 
 ### Example calls:
 The following commands are assumed to be executed inside the directory `XGBoostCreate_submission/`. The first line is the command as it would be executed on datahub. The following blocks are the output from running the commands on a laptop.
@@ -92,4 +97,3 @@ Note that this is only for code submission. You still need to submit your `resul
 1. Zip your folder with the structure described above.
 2. Name your zip file the **same name** you used in the Gradescope leaderboard submission. 
 3. Upload your zip file to this link using dropbox: https://www.dropbox.com/request/6L9YhZ8jStt7z1fxiFwc
-
