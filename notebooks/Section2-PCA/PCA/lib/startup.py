@@ -12,6 +12,11 @@ import math
 import pyspark
 from pyspark import SparkContext
 from lib import sparkConfig
+import yaml
+
+yaml_handle=open('environ.yaml','r')
+yaml_content=yaml.safe_load(yaml_handle)
+weather_data=yaml_content['weather_data']
 
 sc = SparkContext(pyFiles=['lib.tgz'])
 #master="local[10]"
@@ -51,7 +56,7 @@ warnings.filterwarnings('ignore')
 
 ## Change the paths here to account for current location of parquest files
 ## load measurement and stations dataframe
-parquet_root='/datasets/weather/datasets'
+parquet_root=weather_data
 
 measurements_path=parquet_root+'/weather-parquet'
 measurements=sqlContext.read.parquet(measurements_path)
