@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Key>Moby-Dick.txt</Key><RequestId>MN5PT2M2Y05NHPXT</RequestId><HostId>LVdFV4U+JmhIydfebBNuiAxw77gW2KTC1C9WyfkQEfPzWXbWnUKIt3XJiv8gxX0uQsOj8Ese56o=</HostId></Error>
