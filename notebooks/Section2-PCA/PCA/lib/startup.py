@@ -18,8 +18,7 @@ yaml_handle=open('environ.yaml','r')
 yaml_content=yaml.safe_load(yaml_handle)
 weather_data=yaml_content['weather_data']
 
-sc = SparkContext(pyFiles=['lib.tgz'])
-#master="local[10]"
+sc = SparkContext(master="local[2]",pyFiles=['lib.tgz'])
 print('sparkContext=',sc)
 print()
 
